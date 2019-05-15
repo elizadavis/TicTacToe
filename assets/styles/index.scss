@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: blue;
+}
+
+.box {
+  align-items: center;
+  background-color: #000;
+  border: 1px solid white;
+  color: pink;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+}
