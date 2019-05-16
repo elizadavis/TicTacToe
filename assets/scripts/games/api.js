@@ -3,7 +3,6 @@ const config = require('../config')
 const store = require('../store')
 
 const create = formData => {
-  console.log('from api create')
   console.log('store is', store)
   return $.ajax({
     url: config.apiUrl + '/games',
@@ -26,20 +25,17 @@ const index = () => {
 }
 
 const update = responseData => {
-  const id = store.game.id
+  const id = 9756
   return $.ajax({
     url: config.apiUrl + '/games/' + id,
     method: 'PATCH',
     data: {
       'game': {
-        'id': 9780,
-        'cells': ['', '', '', '', '', '', '', '', ''],
-        'over': false,
-        'player_x': {
-          'id': 1,
-          'email': 'eliza@eliza'
+        'cell': {
+          'index': 0,
+          'value': 'x'
         },
-        'player_o': null
+        'over': false
       }
     },
     headers: {
