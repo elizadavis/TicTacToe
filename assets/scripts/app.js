@@ -9,6 +9,10 @@
 const authEvents = require('./auth/events')
 const gameEvents = require('./games/events')
 // const gameApi = require('./games/api')
+// const store = require('../store')
+
+const currentPlayer = 'x'
+const gameBoard = ['', '', '', '', '', '', '', '', '']
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -20,5 +24,53 @@ $(() => {
   $('.box').on('click', function (event) {
     console.log($(event.target).data('cell-index'))
   })
+  $('.box').on('click', function (event) {
+    const cell = ($(event.target).data('cell-index'))
+    gameBoard[cell] = currentPlayer
+    console.log(gameBoard)
+  })
   $('#games-update').on('submit', gameEvents.onUpdate)
 })
+
+const checkForWin = function () {
+  if (gameBoard[0] && gameBoard[0] === gameBoard[1] && gameBoard[0] === gameBoard[2]) {
+    return true
+  } else if (gameBoard[0] && gameBoard[0] === gameBoard[4] && gameBoard[0] === gameBoard[8]) {
+    return true
+  } else if (gameBoard[0] && gameBoard[0] === gameBoard[3] && gameBoard[0] === gameBoard[6]) {
+    return true
+  } else if (gameBoard[1] && gameBoard[1] === gameBoard[4] && gameBoard[1] === gameBoard[7]) {
+    return true
+  } else if (gameBoard[2] && gameBoard[2] === gameBoard[5] && gameBoard[2] === gameBoard[8]) {
+    return true
+  } else if (gameBoard[2] && gameBoard[2] === gameBoard[4] && gameBoard[2] === gameBoard[6]) {
+    return true
+  } else if (gameBoard[3] && gameBoard[3] === gameBoard[4] && gameBoard[3] === gameBoard[5]) {
+    return true
+  } else if (gameBoard[6] && gameBoard[6] === gameBoard[7] && gameBoard[6] === gameBoard[8]) {
+    return true
+  }
+}
+console.log(checkForWin())
+// const gamePlay = function () {
+//   $(() => {
+//     $('.box').on('click', function (event) {
+//       console.log($(event.target).data('cell-index'))
+//     })
+//     $('.box').on('click', function (event) {
+//       const cell = ($(event.target).data('cell-index'))
+//       gameBoard[cell] = currentPlayer
+//       console.log(gameBoard)
+//     })
+//   })
+//   const cell = ($(event.target).data('cell-index'))
+//   if (!gameBoard[cell]) {
+//     $(event.target).text('currentPlayer')
+//   }
+//   checkForWin()
+//   if (currentPlayer === 'x') {
+//     currentPlayer = 'o'
+//   }
+// }
+//
+// console.log(gamePlay())
