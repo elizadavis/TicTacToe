@@ -29,17 +29,17 @@
           </form>
           </nav>
       </header>
-      <div class="container gameboard">
+      <div class="container game-board">
         <div class="row">
-          <div class="col-4 box">A</div>
-          <div class="col-4 box">B</div>
-          <div class="col-4 box">C</div>
-          <div class="col-4 box">D</div>
-          <div class="col-4 box">E</div>
-          <div class="col-4 box">F</div>
-          <div class="col-4 box">G</div>
-          <div class="col-4 box">H</div>
-          <div class="col-4 box">I</div>
+          <div data-cell-index="0" class="col-4 box"></div>
+          <div data-cell-index="1" class="col-4 box"></div>
+          <div data-cell-index="2" class="col-4 box"></div>
+          <div data-cell-index="3" class="col-4 box"></div>
+          <div data-cell-index="4" class="col-4 box"></div>
+          <div data-cell-index="5" class="col-4 box"></div>
+          <div data-cell-index="6" class="col-4 box"></div>
+          <div data-cell-index="7" class="col-4 box"></div>
+          <div data-cell-index="8" class="col-4 box"></div>
         </div>
       </div>
       <h2>Sign Up</h2>
@@ -57,6 +57,20 @@
         <input type="submit" value="Sign In" />
       </form>
       <br>
-
+      <h2>New Game</h2>
+      <form id="games-create">
+        <input type="submit" value="New Game" />
+      </form>
+      <br>
+      <h2>Get All Games</h2>
+      <form id="games-index">
+        <input type="submit" value="Get All Games" />
+      </form>
+      <br>
+      <h2>Update Game</h2>
+      <form id="games-update">
+        <input type="submit" value="Update" />
+      </form>
+      <br>
     </body>
 </html>
