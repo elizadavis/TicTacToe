@@ -22,3 +22,11 @@ h2 {
 .hidden {
   display: none;
 }
+
+#game-message {
+  align-items: center;
+  display: flex;
+  font-size: 40px;
+  font-weight: bold;
+  justify-content: center;
+}
