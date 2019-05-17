@@ -15,8 +15,14 @@ h2 {
   color: white;
   display: flex;
   font-size: 60px;
+  width: 100px;
   height: 100px;
   justify-content: center;
+}
+
+.row {
+  height: auto;
+  width: auto;
 }
 
 .hidden {
