@@ -9,9 +9,9 @@
 const authEvents = require('./auth/events')
 const gameEvents = require('./games/events')
 // const gameApi = require('./games/api')
-// const store = require('../store')
+const store = require('./store')
 
-let currentPlayer = 'x'
+store.currentPlayer = 'o'
 
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 
@@ -27,15 +27,15 @@ $(() => {
   })
   $('.box').on('click', function (event) {
     const cell = ($(event.target).data('cell-index'))
-    gameBoard[cell] = currentPlayer
-    if (currentPlayer === 'x') {
-      currentPlayer = 'o'
+    gameBoard[cell] = store.currentPlayer
+    if (store.currentPlayer === 'o') {
+      store.currentPlayer = 'x'
     } else {
-      currentPlayer = 'x'
+      store.currentPlayer = 'o'
     }
     console.log(gameBoard)
-    $(event.target).text(`${currentPlayer}`)
-    // console.log(store)
+    $(event.target).text(`${store.currentPlayer}`)
+    console.log(store)
   })
   $('#games-update').on('submit', gameEvents.onUpdate)
 })
