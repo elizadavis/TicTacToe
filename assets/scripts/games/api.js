@@ -2,12 +2,12 @@
 const config = require('../config')
 const store = require('../store')
 
-const create = formData => {
-  console.log('store is', store)
+const create = () => {
+  // console.log('store is', store)
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
-    data: formData,
+    data: {},
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -24,18 +24,19 @@ const index = () => {
   })
 }
 
-const update = responseData => {
-  const id = 9756
+const update = cell => {
+  console.log(store.currentPlayer)
+  const id = store.game.id
   return $.ajax({
     url: config.apiUrl + '/games/' + id,
     method: 'PATCH',
     data: {
       'game': {
         'cell': {
-          'index': 0,
-          'value': 'x'
+          'index': cell,
+          'value': store.currentPlayer
         },
-        'over': false
+        'over': store.game.over
       }
     },
     headers: {
