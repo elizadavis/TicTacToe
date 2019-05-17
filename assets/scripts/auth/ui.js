@@ -7,6 +7,8 @@ const onSignUpSuccess = responseData => {
   $('#message').text('Signed up successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#signup-in').hide()
+  $('#loggedin').removeClass('hidden')
 }
 
 const onSignUpFailure = responseData => {
@@ -21,6 +23,8 @@ const onSignInSuccess = responseData => {
   $('#message').text('Signed in successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#signup-in').hide()
+  $('#loggedin').removeClass('hidden')
 
   store.user = responseData.user
   console.log('store is', store)
