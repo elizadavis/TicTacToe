@@ -23,7 +23,6 @@ const onSignInSuccess = responseData => {
   $('#message').addClass('success')
   $('#signup-in').hide()
   $('#loggedin').removeClass('hidden')
-
   store.user = responseData.user
   console.log('store is', store)
 }
@@ -52,6 +51,7 @@ const onSignOutSuccess = () => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#signup-in').show()
+  $('#game-board').addClass('hidden')
   $('#loggedin').addClass('hidden')
 }
 
