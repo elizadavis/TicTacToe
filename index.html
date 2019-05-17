@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -45,11 +45,19 @@
           <form id="sign-out">
             <input type="submit" value="Sign Out" />
           </form>
+          <br>
+          <h2>New Game</h2>
+          <form id="games-create">
+            <input type="submit" value="New Game" />
+          </form>
+          <br>
         </div>
           </nav>
       </header>
       <br>
       <div class="container game-board">
+        <div id="game-message"></div>
+        <br>
         <div class="row">
           <div data-cell-index="0" class="col-4 box"></div>
           <div data-cell-index="1" class="col-4 box"></div>
@@ -62,11 +70,6 @@
           <div data-cell-index="8" class="col-4 box"></div>
         </div>
       </div>
-      <br>
-      <h2>New Game</h2>
-      <form id="games-create">
-        <input type="submit" value="New Game" />
-      </form>
       <br>
       <h2>Get All Games</h2>
       <form id="games-index">
