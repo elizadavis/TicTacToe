@@ -6,6 +6,7 @@ const onCreateSuccess = responseData => {
   console.log('success', responseData)
   $('#message').text('New Game')
   $('#message').removeClass()
+  $('#game-board').removeClass('hidden')
   $('#message').addClass('success')
 }
 
@@ -18,11 +19,7 @@ const onCreateFailure = responseData => {
 
 const onIndexSuccess = responseData => {
   console.log('success', responseData)
-  $('#message').html('')
-  const games = responseData.games
-  games.forEach(game => {
-    $('#message').append(`<p>${game.id}</p>`)
-  })
+  // const games = responseData.games
   $('#message').removeClass()
   $('#message').addClass('success')
 }
@@ -37,10 +34,6 @@ const onIndexFailure = responseData => {
 const onUpdateSuccess = responseData => {
   store.game = responseData.game
   console.log('success', responseData)
-  const text = responseData.game
-  $('#message').text('Updated ' + text)
-  $('#message').removeClass()
-  $('#message').addClass('success')
 }
 
 const onUpdateFailure = responseData => {
