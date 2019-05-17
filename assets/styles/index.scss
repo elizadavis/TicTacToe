@@ -1,15 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: blue;
+  background-color: #DDC7EC;
+}
+
+h2 {
+  display: flex;
 }
 
 .box {
   align-items: center;
-  background-color: #000;
-  border: 1px solid white;
-  color: pink;
+  background-color: #6B79F3;
+  border: 4px solid white;
+  color: white;
   display: flex;
+  font-size: 60px;
   height: 100px;
   justify-content: center;
+}
+
+.hidden {
+  display: none;
 }
