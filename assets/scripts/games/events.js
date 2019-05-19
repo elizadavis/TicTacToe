@@ -1,5 +1,5 @@
 'use strict'
-// const getFormFields = require('../../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
@@ -22,6 +22,15 @@ const onIndex = event => {
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
+}
+
+const onShow = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.show(formData)
+    .then(ui.onShowSuccess)
+    .catch(ui.onShowFailure)
 }
 
 const checkForXWin = function () {
@@ -75,7 +84,7 @@ const checkForDraw = function () {
 const onBoxClick = event => {
   event.preventDefault()
   const cell = ($(event.target).data('cell-index'))
-  turnCounter.push($(event.target).data('cell-index'))
+  turnCounter.push(cell)
   if (!store.game.cells[cell]) {
     store.game.cells[cell] = store.currentPlayer
     $(event.target).text(`${store.currentPlayer}`)
@@ -103,5 +112,6 @@ const onBoxClick = event => {
 module.exports = {
   onCreate,
   onIndex,
+  onShow,
   onBoxClick
 }
