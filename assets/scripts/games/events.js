@@ -5,11 +5,13 @@ const ui = require('./ui')
 const store = require('../store')
 
 store.currentPlayer = 'x'
+const turnCounter = []
 
 const onCreate = () => {
   event.preventDefault()
   $('.box').text('')
   $('#game-message').text('')
+  turnCounter.length = 0
   api.create()
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
@@ -64,18 +66,29 @@ const checkForOWin = function () {
   }
 }
 
+const checkForDraw = function () {
+  if (!checkForOWin() && !checkForXWin() && turnCounter.length >= 8) {
+    return true
+  }
+}
+
 const onBoxClick = event => {
   event.preventDefault()
   const cell = ($(event.target).data('cell-index'))
+  turnCounter.push($(event.target).data('cell-index'))
   if (!store.game.cells[cell]) {
     store.game.cells[cell] = store.currentPlayer
     $(event.target).text(`${store.currentPlayer}`)
-    if (checkForXWin() === true) {
+    if (checkForXWin()) {
       $('#game-message').text('x wins!')
       store.game.over = true
     }
-    if (checkForOWin() === true) {
+    if (checkForOWin()) {
       $('#game-message').text('o wins!')
+      store.game.over = true
+    }
+    if (checkForDraw()) {
+      $('#game-message').text('Draw - no winner')
       store.game.over = true
     }
     api.update(cell)
@@ -85,10 +98,6 @@ const onBoxClick = event => {
   } else {
     $('#game-message').text('space already marked')
   }
-  // if (checkForOWin() === false && checkForXWin() === false) {
-  //   $('#game-message').text('Draw - Game Over')
-  //   store.game.over = true
-  // }
 }
 
 module.exports = {
