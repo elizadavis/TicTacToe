@@ -7,6 +7,8 @@ const onSignUpSuccess = responseData => {
   $('#message').text('Signed up successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#sign-up input[type="email"]').val('')
+  $('#sign-up input[type="password"]').val('')
 }
 
 const onSignUpFailure = responseData => {
