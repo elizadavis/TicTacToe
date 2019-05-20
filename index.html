@@ -34,14 +34,14 @@
           </div>
           <br>
           <div id="loggedin" class="hidden">
-        <h3>Change Password</h3>
+        <h3 id="changePw">Change Password</h3>
         <form id="change-pw">
             <input type="password" required name="passwords[old]" placeholder="Old Password" />
             <input type="password" required name="passwords[new]" placeholder="New Password" />
             <input type="submit" value="Change Password" />
           </form>
           <br>
-          <h3>Sign Out</h3>
+          <h3 id="sOut">Sign Out</h3>
           <form id="sign-out">
             <input type="submit" value="Sign Out" />
           </form>
@@ -54,19 +54,21 @@
       </nav>
       </header>
       <br>
-      <div id="game-board" class="container hidden">
-        <div id="game-message"></div>
-        <br>
-        <div class="row">
-          <div data-cell-index="0" class="col-4 box"></div>
-          <div data-cell-index="1" class="col-4 box"></div>
-          <div data-cell-index="2" class="col-4 box"></div>
-          <div data-cell-index="3" class="col-4 box"></div>
-          <div data-cell-index="4" class="col-4 box"></div>
-          <div data-cell-index="5" class="col-4 box"></div>
-          <div data-cell-index="6" class="col-4 box"></div>
-          <div data-cell-index="7" class="col-4 box"></div>
-          <div data-cell-index="8" class="col-4 box"></div>
+      <div class="embed-responsive embed-responsive-1by1">
+        <div id="game-board" class="container hidden">
+          <div id="game-message"></div>
+          <br>
+          <div class="embed-responsive-item row gameboard">
+            <div data-cell-index="0" class="col-4 box"></div>
+            <div data-cell-index="1" class="col-4 box"></div>
+            <div data-cell-index="2" class="col-4 box"></div>
+            <div data-cell-index="3" class="col-4 box"></div>
+            <div data-cell-index="4" class="col-4 box"></div>
+            <div data-cell-index="5" class="col-4 box"></div>
+            <div data-cell-index="6" class="col-4 box"></div>
+            <div data-cell-index="7" class="col-4 box"></div>
+            <div data-cell-index="8" class="col-4 box"></div>
+          </div>
         </div>
       </div>
       <br>
