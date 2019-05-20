@@ -23,7 +23,7 @@ I would write the gameplay logic. Since I came into the course with very little
 web development experience, most of my planning was considered around the work
 and lessons that we had covered in our first few weeks of class.
 
-[Wireframe](./wireframe.JPG)
+![Wireframe](./wireframe.JPG)
 
 When beginning the project, I had our API lessons fresh in my mind and figured
 this would be a good place to start. I set up the authorization first and got a
