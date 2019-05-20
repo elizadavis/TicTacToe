@@ -17,15 +17,15 @@
         <h2 id="message"></h2>
         <nav>
           <div id="signup-in">
-          <h2>Sign Up</h2>
+          <h3>Sign Up</h3>
           <form id="sign-up">
             <input type="email" required name="credentials[email]" placeholder="Email" />
             <input type="password" required name="credentials[password]" placeholder="Password" />
-            <input type="password" required name="credentials[password_confirmation]" placeholder="Password confirmation" />
+            <input type="password" required name="credentials[password_confirmation]" placeholder="Confirm Password" />
             <input type="submit" value="Sign Up" />
           </form>
           <br>
-          <h2>Sign In</h2>
+          <h3>Sign In</h3>
           <form id="sign-in">
             <input type="email" required name="credentials[email]" placeholder="Email" />
             <input type="password" required name="credentials[password]" placeholder="Password" />
@@ -34,55 +34,55 @@
           </div>
           <br>
           <div id="loggedin" class="hidden">
-        <h2>Change Password</h2>
+        <h3>Change Password</h3>
         <form id="change-pw">
             <input type="password" required name="passwords[old]" placeholder="Old Password" />
             <input type="password" required name="passwords[new]" placeholder="New Password" />
             <input type="submit" value="Change Password" />
           </form>
           <br>
-          <h2>Sign Out</h2>
+          <h3>Sign Out</h3>
           <form id="sign-out">
             <input type="submit" value="Sign Out" />
           </form>
           <br>
-          <h2>New Game</h2>
           <form id="games-create">
             <input type="submit" value="New Game" />
           </form>
           <br>
         </div>
-          </nav>
+      </nav>
       </header>
       <br>
       <div id="game-board" class="container hidden">
         <div id="game-message"></div>
         <br>
         <div class="row">
-          <div id="0" data-cell-index="0" class="col-4 box"></div>
-          <div id="1" data-cell-index="1" class="col-4 box"></div>
-          <div id="2" data-cell-index="2" class="col-4 box"></div>
-          <div id="3" data-cell-index="3" class="col-4 box"></div>
-          <div id="4" data-cell-index="4" class="col-4 box"></div>
-          <div id="5" data-cell-index="5" class="col-4 box"></div>
-          <div id="6" data-cell-index="6" class="col-4 box"></div>
-          <div id="7" data-cell-index="7" class="col-4 box"></div>
-          <div id="8" data-cell-index="8" class="col-4 box"></div>
+          <div data-cell-index="0" class="col-4 box"></div>
+          <div data-cell-index="1" class="col-4 box"></div>
+          <div data-cell-index="2" class="col-4 box"></div>
+          <div data-cell-index="3" class="col-4 box"></div>
+          <div data-cell-index="4" class="col-4 box"></div>
+          <div data-cell-index="5" class="col-4 box"></div>
+          <div data-cell-index="6" class="col-4 box"></div>
+          <div data-cell-index="7" class="col-4 box"></div>
+          <div data-cell-index="8" class="col-4 box"></div>
         </div>
       </div>
       <br>
-      <h2>How many games have you played?</h2>
-      <p id="get-all-games"></p>
+      <div id="game-options" class="hidden">
+        <h3 id="get-all-games">How many games have you played?</h3>
+        <br>
       <form id="games-index">
         <input type="submit" value="Get Game Stats" />
       </form>
       <br>
-      <br>
       <h2 id="show-game"></h2>
       <form id="get-game">
-        <input type="number" name="game[id]" placeholder="ID" />
+        <input type="number" name="game[id]" placeholder="Game ID Number" />
         <input type="submit" value="Get A Game" />
       </form>
       <br>
+    </div>
     </body>
 </html>
