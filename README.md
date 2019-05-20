@@ -1,13 +1,12 @@
-###
-```
-Tic Tac Toe - By Eliza Davis
 
-Technologies used:
+# Tic Tac Toe - By Eliza Davis
+
+## Technologies used:
 1. HTML
 2. CSS & Sass
 3. JavaScript & JQuery
 
-User Stories:
+## User Stories:
 1. As a user, I want to sign up.
 2. As a user, I want to sign in.
 3. As a user, I want to change my password.
@@ -16,7 +15,7 @@ User Stories:
 6. As a user, I want to see who won the game.
 7. As a user, I want to see how many games I have played.
 
-Planning, Development Process, Problem-Solving:
+## Planning, Development Process, Problem-Solving:
 
 In the planning phase, I came up with a basic game design and thought about how
 I would write the gameplay logic. Since I came into the course with very little
@@ -24,6 +23,7 @@ web development experience, most of my planning was considered around the work
 and lessons that we had covered in our first few weeks of class.
 
 ![Wireframe](./wireframe.JPG)
+
 
 When beginning the project, I had our API lessons fresh in my mind and figured
 this would be a good place to start. I set up the authorization first and got a
@@ -47,12 +47,8 @@ works as a part of the whole. I still have plenty to learn, but my ability to
 conceptualize the project as a whole as well as its moving pieces has come a
 long way over the past week.
 
-Future Goals/Current Unaccomplishments:
+## Future Goals/Current Unaccomplishments:
 
 1. My logic is functional, but messy. I'd like to tidy it up.
 2. Use images to mark moves to get some themes going.
 3. Revisit unfinished games and finish them.
-
-
-```
-###
