@@ -3,37 +3,38 @@
 const store = require('../store')
 
 const onSignUpSuccess = responseData => {
-  $('#message').text('Signed up successfully!')
+  $('#message').text('signed up successfully!')
   $('#sign-up input[type="email"]').val('')
   $('#sign-up input[type="password"]').val('')
 }
 
 const onSignUpFailure = responseData => {
-  $('#message').text('Sign up failed')
+  $('#message').text('sign up failed')
 }
 
 const onSignInSuccess = responseData => {
-  $('#message').text('Signed in successfully!')
+  $('#message').text('signed in successfully!')
   $('#signup-in').hide()
   $('#loggedin').removeClass('hidden')
   $('#game-options').removeClass('hidden')
+  $('#game-board').removeClass('hidden')
   store.user = responseData.user
 }
 
 const onSignInFailure = responseData => {
-  $('#message').text('Sign in failed')
+  $('#message').text('sign in failed')
 }
 
 const onChangePasswordSuccess = () => {
-  $('#message').text('Password changed successfully!')
+  $('#message').text('password changed successfully!')
 }
 
 const onChangePasswordFailure = () => {
-  $('#message').text('Unable to change password')
+  $('#message').text('unable to change password')
 }
 
 const onSignOutSuccess = () => {
-  $('#message').text('Signed out successfully!')
+  $('#message').text('signed out successfully!')
   $('#signup-in').show()
   $('#game-board').addClass('hidden')
   $('#loggedin').addClass('hidden')

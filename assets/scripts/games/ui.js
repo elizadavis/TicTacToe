@@ -3,33 +3,33 @@ const store = require('../store')
 
 const onCreateSuccess = responseData => {
   store.game = responseData.game
-  $('#message').text('New Game')
+  $('#message').text('new game')
   $('#game-board').removeClass('hidden')
 }
 
 const onCreateFailure = responseData => {
-  $('#message').text('Failed to begin new game')
+  $('#message').text('failed to begin new game')
 }
 
 const onIndexSuccess = responseData => {
   const games = responseData.games
   const complete = games.filter(game => game.over)
-  $('#get-all-games').text(`You have played ${complete.length} full games.`)
+  $('#get-all-games').text(`you've played ${complete.length} full games`)
 }
 
 const onIndexFailure = responseData => {
-  $('#get-all-games').text('Failed to get game stats')
+  $('#get-all-games').text('failed to get game stats')
 }
 
 const onUpdateSuccess = responseData => {
   store.game = responseData.game
   if (!store.game.over) {
-    $('#game-message').text(`Your turn, ${store.currentPlayer}!`)
+    $('#game-message').text(`your turn, ${store.currentPlayer}!`)
   }
 }
 
 const onUpdateFailure = responseData => {
-  $('#message').text('Failed to update')
+  $('#message').text('failed to update')
 }
 
 const onShowSuccess = responseData => {
@@ -44,13 +44,13 @@ const onShowSuccess = responseData => {
   $('[data-cell-index=6]').html(`${moves[6]}`)
   $('[data-cell-index=7]').html(`${moves[7]}`)
   $('[data-cell-index=8]').html(`${moves[8]}`)
-  $('#game-message').text('Showing game: ' + gameId)
+  $('#game-message').text('showing game: ' + gameId)
   $('#get-game input[type="number"]').val('')
   $('#game-board').removeClass('hidden')
 }
 
 const onShowFailure = responseData => {
-  $('#game-message').text('Failed to show game')
+  $('#game-message').text('failed to show game')
 }
 
 module.exports = {
