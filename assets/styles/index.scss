@@ -2,10 +2,15 @@
 
 body {
   background-color: #DDC7EC;
+  font-family: monospace, sans-serif;
 }
 
-h2 {
+h1 {
+  align-items: center;
   display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .box {
@@ -13,17 +18,22 @@ h2 {
   background-color: #6B79F3;
   border: 4px solid white;
   color: white;
-  display: flex;
+  display: grid;
   font-size: 60px;
-  width: 100px;
-  height: 100px;
   justify-content: center;
+  margin: 0 auto;
+  padding: 60px;
+  width: 60vw;
 }
 
-.row {
-  height: auto;
-  width: auto;
+#games-create {
+  font-size: 30px;
+  text-align: center;
 }
+// .row {
+//   height: auto;
+//   width: auto;
+// }
 
 .hidden {
   display: none;
@@ -34,5 +44,20 @@ h2 {
   display: flex;
   font-size: 40px;
   font-weight: bold;
+  justify-content: center;
+}
+
+#game-options {
+  text-align: center;
+}
+
+#message {
+  text-align: center;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
