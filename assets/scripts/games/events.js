@@ -86,14 +86,17 @@ const onBoxClick = event => {
     if (checkForXWin()) {
       $('#game-message').text('x wins!')
       store.game.over = true
+      store.isClickable = false
     }
     if (checkForOWin()) {
       $('#game-message').text('o wins!')
       store.game.over = true
+      store.isClickable = false
     }
     if (checkForDraw()) {
       $('#game-message').text('draw - no winner')
       store.game.over = true
+      store.isClickable = false
     }
     api.update(cell)
       .then(ui.onUpdateSuccess)
