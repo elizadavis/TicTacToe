@@ -9,11 +9,12 @@ const turnCounter = []
 
 const onCreate = () => {
   event.preventDefault()
-  $('.box').text('')
+  $('.box').html('')
   $('#game-message').text('')
   turnCounter.length = 0
   api.create()
     .then(ui.onCreateSuccess)
+    .then($('.box').on('click', onBoxClick))
     .catch(ui.onCreateFailure)
 }
 
@@ -22,15 +23,6 @@ const onIndex = event => {
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
-}
-
-const onShow = event => {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.show(formData)
-    .then(ui.onShowSuccess)
-    .catch(ui.onShowFailure)
 }
 
 const checkForXWin = function () {
@@ -76,7 +68,7 @@ const checkForOWin = function () {
 }
 
 const checkForDraw = function () {
-  if (!checkForOWin() && !checkForXWin() && turnCounter.length >= 8) {
+  if (!checkForOWin() && !checkForXWin() && turnCounter.length >= 9) {
     return true
   }
 }
@@ -87,7 +79,7 @@ const onBoxClick = event => {
   turnCounter.push(cell)
   if (!store.game.cells[cell]) {
     store.game.cells[cell] = store.currentPlayer
-    $(event.target).text(`${store.currentPlayer}`)
+    $(event.target).html(`${store.currentPlayer}`)
     if (checkForXWin()) {
       $('#game-message').text('x wins!')
       store.game.over = true
@@ -97,7 +89,7 @@ const onBoxClick = event => {
       store.game.over = true
     }
     if (checkForDraw()) {
-      $('#game-message').text('Draw - no winner')
+      $('#game-message').text('draw - no winner')
       store.game.over = true
     }
     api.update(cell)
@@ -109,9 +101,19 @@ const onBoxClick = event => {
   }
 }
 
+const onShow = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.show(formData)
+    .then(ui.onShowSuccess)
+    .then($('.box').off('click'))
+    .catch(ui.onShowFailure)
+}
+
 module.exports = {
   onCreate,
   onIndex,
-  onShow,
-  onBoxClick
+  onBoxClick,
+  onShow
 }
