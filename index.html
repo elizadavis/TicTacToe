@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Tic Tac Toe</title>
+      <title>tic tac toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,47 +13,45 @@
     </head>
     <body>
       <header>
-        <h1>Tic Tac Toe</h1>
-        <h2 id="message"></h2>
+        <h1>tic tac toe</h1>
+        <h3 id="message"></h3>
         <nav>
           <div id="signup-in">
-          <h3>Sign Up</h3>
+          <h4>sign up</h4>
           <form id="sign-up">
-            <input type="email" required name="credentials[email]" placeholder="Email" />
-            <input type="password" required name="credentials[password]" placeholder="Password" />
-            <input type="password" required name="credentials[password_confirmation]" placeholder="Confirm Password" />
-            <input type="submit" value="Sign Up" />
+            <input type="email" required name="credentials[email]" placeholder="email" />
+            <input type="password" required name="credentials[password]" placeholder="password" />
+            <input type="password" required name="credentials[password_confirmation]" placeholder="confirm password" />
+            <input type="submit" value="sign up" />
           </form>
           <br>
-          <h3>Sign In</h3>
+          <h4>sign in</h4>
           <form id="sign-in">
-            <input type="email" required name="credentials[email]" placeholder="Email" />
-            <input type="password" required name="credentials[password]" placeholder="Password" />
-            <input type="submit" value="Sign In" />
+            <input type="email" required name="credentials[email]" placeholder="email" />
+            <input type="password" required name="credentials[password]" placeholder="password" />
+            <input type="submit" value="sign in" />
           </form>
           </div>
           <br>
           <div id="loggedin" class="hidden">
-        <h3 id="changePw">Change Password</h3>
+        <h4>change password</h4>
         <form id="change-pw">
-            <input type="password" required name="passwords[old]" placeholder="Old Password" />
-            <input type="password" required name="passwords[new]" placeholder="New Password" />
-            <input type="submit" value="Change Password" />
+            <input type="password" required name="passwords[old]" placeholder="old password" />
+            <input type="password" required name="passwords[new]" placeholder="new password" />
+            <input type="submit" value="change password" />
           </form>
           <br>
-          <h3 id="sOut">Sign Out</h3>
+          <h4>sign out</h4>
           <form id="sign-out">
-            <input type="submit" value="Sign Out" />
+            <input type="submit" value="sign out" />
           </form>
           <br>
           <form id="games-create">
-            <input type="submit" value="New Game" />
+            <input type="submit" value="new game" />
           </form>
-          <br>
         </div>
       </nav>
       </header>
-      <br>
       <div id="game-message"></div>
       <div class="embed-responsive embed-responsive-1by1">
         <div id="game-board" class="container hidden">
@@ -73,16 +71,16 @@
       </div>
       <br>
       <div id="game-options" class="hidden">
-        <h3 id="get-all-games">How many games have you played?</h3>
+        <h4 id="get-all-games">how many games have you played?</h4>
         <br>
       <form id="games-index">
-        <input type="submit" value="Get Game Stats" />
+        <input type="submit" value="get my games" />
       </form>
       <br>
       <h2 id="show-game"></h2>
       <form id="get-game">
-        <input type="number" name="game[id]" placeholder="Game ID Number" />
-        <input type="submit" value="Get A Game" />
+        <input type="number" name="game[id]" placeholder="game id number" />
+        <input type="submit" value="see a game" />
       </form>
       <br>
     </div>

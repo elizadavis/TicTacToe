@@ -13,11 +13,13 @@ const onSignUpFailure = responseData => {
 }
 
 const onSignInSuccess = responseData => {
-  $('#message').text('signed in successfully!')
+  $('#message').text('signed in - click "new game" to play!')
   $('#signup-in').hide()
   $('#loggedin').removeClass('hidden')
   $('#game-options').removeClass('hidden')
   $('#game-board').removeClass('hidden')
+  $('#sign-in input[type="email"]').val('')
+  $('#sign-in input[type="password"]').val('')
   store.user = responseData.user
 }
 
@@ -34,15 +36,16 @@ const onChangePasswordFailure = () => {
 }
 
 const onSignOutSuccess = () => {
-  $('#message').text('signed out successfully!')
+  $('#message').text('signed out successfully')
   $('#signup-in').show()
   $('#game-board').addClass('hidden')
   $('#loggedin').addClass('hidden')
   $('#game-options').addClass('hidden')
+  $('#game-message').text('thanks for playing!')
 }
 
 const onSignOutFailure = () => {
-  $('#message').text('Sign out failed')
+  $('#message').text('sign out failed')
 }
 
 module.exports = {

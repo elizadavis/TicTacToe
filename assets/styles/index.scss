@@ -9,15 +9,13 @@ h1 {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-top: 20px;
 }
 
 nav {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .box {
@@ -55,17 +53,21 @@ nav {
 }
 
 #game-message {
-  align-items: center;
-  display: flex;
   font-size: 40px;
   font-weight: bold;
-  justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: -20px;
+  text-align: center;
+}
+
+#game-options {
+  text-align: center;
 }
 
 #message {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 #signup-in {

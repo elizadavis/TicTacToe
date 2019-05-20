@@ -3,7 +3,7 @@ const store = require('../store')
 
 const onCreateSuccess = responseData => {
   store.game = responseData.game
-  $('#message').text('new game')
+  $('#message').text('game in play')
   $('#game-board').removeClass('hidden')
 }
 
@@ -25,6 +25,8 @@ const onUpdateSuccess = responseData => {
   store.game = responseData.game
   if (!store.game.over) {
     $('#game-message').text(`your turn, ${store.currentPlayer}!`)
+  } else {
+    $('#message').text('click "new game" to play again')
   }
 }
 
