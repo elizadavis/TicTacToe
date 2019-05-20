@@ -3,7 +3,6 @@
 const store = require('../store')
 
 const onSignUpSuccess = responseData => {
-  console.log('success', responseData)
   $('#message').text('Signed up successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -12,25 +11,22 @@ const onSignUpSuccess = responseData => {
 }
 
 const onSignUpFailure = responseData => {
-  console.log('failure', responseData)
   $('#message').text('Sign up failed')
   $('#message').removeClass()
   $('#message').addClass('failure')
 }
 
 const onSignInSuccess = responseData => {
-  console.log('success', responseData)
   $('#message').text('Signed in successfully!')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('#signup-in').hide()
   $('#loggedin').removeClass('hidden')
+  $('#game-options').removeClass('hidden')
   store.user = responseData.user
-  console.log('store is', store)
 }
 
 const onSignInFailure = responseData => {
-  console.log('failure', responseData)
   $('#message').text('Sign in failed')
   $('#message').removeClass()
   $('#message').addClass('failure')
@@ -55,6 +51,7 @@ const onSignOutSuccess = () => {
   $('#signup-in').show()
   $('#game-board').addClass('hidden')
   $('#loggedin').addClass('hidden')
+  $('#game-options').addClass('hidden')
 }
 
 const onSignOutFailure = () => {
