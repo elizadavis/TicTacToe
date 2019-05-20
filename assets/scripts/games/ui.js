@@ -4,29 +4,21 @@ const store = require('../store')
 const onCreateSuccess = responseData => {
   store.game = responseData.game
   $('#message').text('New Game')
-  $('#message').removeClass()
   $('#game-board').removeClass('hidden')
-  $('#message').addClass('success')
 }
 
 const onCreateFailure = responseData => {
   $('#message').text('Failed to begin new game')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
 }
 
 const onIndexSuccess = responseData => {
   const games = responseData.games
   const complete = games.filter(game => game.over)
   $('#get-all-games').text(`You have played ${complete.length} full games.`)
-  $('#message').removeClass()
-  $('#message').addClass('success')
 }
 
 const onIndexFailure = responseData => {
   $('#get-all-games').text('Failed to get game stats')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
 }
 
 const onUpdateSuccess = responseData => {
@@ -38,8 +30,6 @@ const onUpdateSuccess = responseData => {
 
 const onUpdateFailure = responseData => {
   $('#message').text('Failed to update')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
 }
 
 const onShowSuccess = responseData => {
@@ -57,13 +47,10 @@ const onShowSuccess = responseData => {
   $('#game-message').text('Showing game: ' + gameId)
   $('#get-game input[type="number"]').val('')
   $('#game-board').removeClass('hidden')
-  $('#message').addClass('success')
 }
 
 const onShowFailure = responseData => {
   $('#game-message').text('Failed to show game')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
 }
 
 module.exports = {
