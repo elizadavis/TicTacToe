@@ -12,9 +12,9 @@ const onCreate = () => {
   $('.box').html('')
   $('#game-message').text('')
   turnCounter.length = 0
+  store.isClickable = true
   api.create()
     .then(ui.onCreateSuccess)
-    .then($('.box').on('click', onBoxClick))
     .catch(ui.onCreateFailure)
 }
 
@@ -76,6 +76,9 @@ const checkForDraw = function () {
 const onBoxClick = event => {
   event.preventDefault()
   const cell = ($(event.target).data('cell-index'))
+  if (!store.isClickable) {
+    return
+  }
   turnCounter.push(cell)
   if (!store.game.cells[cell]) {
     store.game.cells[cell] = store.currentPlayer
@@ -105,9 +108,9 @@ const onShow = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  store.isClickable = false
   api.show(formData)
     .then(ui.onShowSuccess)
-    .then($('.box').off('click'))
     .catch(ui.onShowFailure)
 }
 
