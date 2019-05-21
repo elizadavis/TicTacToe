@@ -5,6 +5,8 @@ const onCreateSuccess = responseData => {
   store.game = responseData.game
   $('#message').text('game in play')
   $('#game-board').removeClass('hidden')
+  $('#get-all-games').text('how many games have you played?')
+  $('#completed').text('')
 }
 
 const onCreateFailure = responseData => {
@@ -14,7 +16,9 @@ const onCreateFailure = responseData => {
 const onIndexSuccess = responseData => {
   const games = responseData.games
   const complete = games.filter(game => game.over)
+  const gameIds = complete.map(game => game.id)
   $('#get-all-games').text(`you've played ${complete.length} full games`)
+  $('#completed').text(`your viewable game id numbers are: ${gameIds}`)
 }
 
 const onIndexFailure = responseData => {
