@@ -104,6 +104,7 @@ const onBoxClick = event => {
       .catch(ui.onUpdateFailure)
   } else {
     $('#game-message').text('space already marked')
+    turnCounter.pop(cell)
   }
 }
 
