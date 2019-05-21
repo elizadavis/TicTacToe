@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>tic tac toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <h1>tic tac toe</h1>
+        <h3 id="message"></h3>
+        <nav>
+          <div id="signup-in">
+          <h4>sign up</h4>
+          <form id="sign-up">
+            <input type="email" required name="credentials[email]" placeholder="email" />
+            <input type="password" required name="credentials[password]" placeholder="password" />
+            <input type="password" required name="credentials[password_confirmation]" placeholder="confirm password" />
+            <input type="submit" value="sign up" />
+          </form>
+          <br>
+          <h4>sign in</h4>
+          <form id="sign-in">
+            <input type="email" required name="credentials[email]" placeholder="email" />
+            <input type="password" required name="credentials[password]" placeholder="password" />
+            <input type="submit" value="sign in" />
+          </form>
+          </div>
+          <br>
+          <div id="loggedin" class="hidden">
+        <h4>change password</h4>
+        <form id="change-pw">
+            <input type="password" required name="passwords[old]" placeholder="old password" />
+            <input type="password" required name="passwords[new]" placeholder="new password" />
+            <input type="submit" value="change password" />
+          </form>
+          <br>
+          <h4>sign out</h4>
+          <form id="sign-out">
+            <input type="submit" value="sign out" />
+          </form>
+          <br>
+          <form id="games-create">
+            <input type="submit" value="new game" />
+          </form>
+        </div>
+      </nav>
+      </header>
+      <div id="game-message"></div>
+      <div class="embed-responsive embed-responsive-1by1">
+        <div id="game-board" class="container hidden">
+          <br>
+          <div class="embed-responsive-item row gameboard">
+            <div data-cell-index="0" class="col-4 box"></div>
+            <div data-cell-index="1" class="col-4 box"></div>
+            <div data-cell-index="2" class="col-4 box"></div>
+            <div data-cell-index="3" class="col-4 box"></div>
+            <div data-cell-index="4" class="col-4 box"></div>
+            <div data-cell-index="5" class="col-4 box"></div>
+            <div data-cell-index="6" class="col-4 box"></div>
+            <div data-cell-index="7" class="col-4 box"></div>
+            <div data-cell-index="8" class="col-4 box"></div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div id="game-options" class="hidden">
+        <h4 id="get-all-games">how many games have you played?</h4>
+        <br>
+      <form id="games-index">
+        <input type="submit" value="get my games" />
+      </form>
+      <br>
+      <h5 id="completed"></h5>
+      <br>
+      <h2 id="show-game"></h2>
+      <form id="get-game">
+        <input type="number" name="game[id]" placeholder="game id number" />
+        <input type="submit" value="see a game" />
+      </form>
+      <br>
+    </div>
+    </body>
+</html>
