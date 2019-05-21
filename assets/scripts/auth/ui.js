@@ -53,6 +53,17 @@ const onSignOutSuccess = () => {
   $('#loggedin').addClass('hidden')
   $('#game-options').addClass('hidden')
   $('#game-message').text('thanks for playing!')
+  $('#get-all-games').text('how many games have you played?')
+  $('#completed').text('')
+  $('[data-cell-index=0]').html('')
+  $('[data-cell-index=1]').html('')
+  $('[data-cell-index=2]').html('')
+  $('[data-cell-index=3]').html('')
+  $('[data-cell-index=4]').html('')
+  $('[data-cell-index=5]').html('')
+  $('[data-cell-index=6]').html('')
+  $('[data-cell-index=7]').html('')
+  $('[data-cell-index=8]').html('')
 }
 
 const onSignOutFailure = () => {
